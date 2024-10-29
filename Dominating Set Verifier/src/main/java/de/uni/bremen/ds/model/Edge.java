@@ -8,10 +8,6 @@ public class Edge {
 
     protected Edge(final Vertex startVertex,
                    final Vertex endVertex) {
-
-        if (startVertex.getId() == endVertex.getId()) {
-            throw new IllegalArgumentException("Vertexes cant be the same");
-        }
         if (startVertex.getId() < endVertex.getId()) {
             this.startId = startVertex.getId();
             this.endId = endVertex.getId();
@@ -23,10 +19,6 @@ public class Edge {
 
     protected Edge(final int startId,
                    final int endId) {
-        if (startId == endId) {
-            throw new IllegalArgumentException("Vertexes cant be the same");
-        }
-
         if (startId < endId) {
             this.startId = startId;
             this.endId = endId;

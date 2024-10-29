@@ -29,7 +29,6 @@ public class Graph {
     }
 
 
-    //create n Vertexes
     public Graph(final int n) {
         vertexConnections = new HashMap<>(n);
         vertexMap = new HashMap<>(n);
