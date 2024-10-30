@@ -18,7 +18,7 @@ public class DSVerifier {
         Set<Integer> dominated = new HashSet<>();
 
         for(int vertex : solution.getSolution()) {
-            if(!graph.vertexExits(vertex)) {
+            if(!graph.vertexExists(vertex)) {
                 throw new VerificationException("Vertex " + vertex + " does not exist in the graph");
             }
             dominated.add(vertex);

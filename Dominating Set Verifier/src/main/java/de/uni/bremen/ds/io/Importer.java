@@ -35,11 +35,11 @@ public class Importer {
                 int start = Integer.parseInt(strings[0]);
                 int end = Integer.parseInt(strings[1]);
 
-                if (!graph.vertexExits(start)) {
+                if (!graph.vertexExists(start)) {
                     graph.addVertex(new Vertex(start));
                 }
 
-                if (!graph.vertexExits(end)) {
+                if (!graph.vertexExists(end)) {
                     graph.addVertex(new Vertex(end));
                 }
 

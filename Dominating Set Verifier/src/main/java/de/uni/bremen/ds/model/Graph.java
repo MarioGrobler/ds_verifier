@@ -133,7 +133,7 @@ public class Graph {
 
 
     public int degreeOf(final Vertex vertex) {
-        if (vertexExits(vertex)) {
+        if (vertexExists(vertex)) {
             return vertexConnections.get(vertex.getId()).size();
         }
         return 0;
@@ -141,7 +141,7 @@ public class Graph {
 
 
     public int degreeOf(final int id) {
-        if (vertexExits(id)) {
+        if (vertexExists(id)) {
             return vertexConnections.get(id).size();
         }
         return 0;
@@ -156,12 +156,12 @@ public class Graph {
     }
 
 
-    public boolean vertexExits(final Vertex id) {
+    public boolean vertexExists(final Vertex id) {
         return vertexMap.containsKey(id.getId());
     }
 
 
-    public boolean vertexExits(final int id) {
+    public boolean vertexExists(final int id) {
         return vertexMap.containsKey(id);
     }
 
@@ -202,7 +202,7 @@ public class Graph {
 
 
     public boolean edgeExists(final Vertex vertexStart, final Vertex vertexEnd) {
-        if (!vertexExits(vertexStart)) {
+        if (!vertexExists(vertexStart)) {
             return false;
         }
         return vertexConnections.get(vertexStart.getId()).contains(vertexEnd);
@@ -230,7 +230,7 @@ public class Graph {
 
 
     public Set<Vertex> getNeighbors(final Vertex vertex) {
-        if (vertexExits(vertex)) {
+        if (vertexExists(vertex)) {
             return vertexConnections.get(vertex.getId());
         }
         return new HashSet<>();
@@ -238,7 +238,7 @@ public class Graph {
 
 
     public Set<Vertex> getNeighbors(final int vertex) {
-        if (vertexExits(vertex)) {
+        if (vertexExists(vertex)) {
             return vertexConnections.get(vertex);
         }
         return new HashSet<>();
