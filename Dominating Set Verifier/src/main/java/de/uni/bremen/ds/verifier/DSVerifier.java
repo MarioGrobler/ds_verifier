@@ -12,7 +12,7 @@ public class DSVerifier {
     public boolean verify(final Graph graph, final Solution solution) {
         if(!solution.isConsistent()) {
             throw new VerificationException("Solution is not consistent. Specified solution size: " +
-                    solution.getSolutionSize() + ", actual solution size: " + solution.getSolution().size());
+                    solution.getSolutionSize() + ", given solution size: " + solution.getSolution().size());
         }
 
         Set<Integer> dominated = new HashSet<>();

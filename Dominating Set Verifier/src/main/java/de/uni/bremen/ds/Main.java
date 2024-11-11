@@ -21,7 +21,7 @@ public class Main {
         if(verifier.verify(graph, solution)) {
             System.out.println("Solution of size " + solution.getSolutionSize() + " is valid!");
         } else {
-            System.err.println("At least one vertex is not dominated!");
+            System.err.println("At least one vertex is not dominated by the given solution!");
         }
     }
 }
