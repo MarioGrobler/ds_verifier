@@ -7,8 +7,10 @@ import de.uni.bremen.ds.verifier.DSVerifier;
 
 import java.io.IOException;
 
+
 public class Main {
     public static void main(String[] args) throws IOException {
+
         if(args.length != 2) {
             System.err.println("Two arguments expected. Usage: ds_verifier [Path to graph] [Path to solution]");
         }
@@ -23,5 +25,6 @@ public class Main {
         } else {
             System.err.println("At least one vertex is not dominated by the given solution!");
         }
+
     }
 }
