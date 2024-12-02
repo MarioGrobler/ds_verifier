@@ -26,7 +26,7 @@ public class Importer {
             }
 
             if (line.startsWith("p")) {
-                if (!strings[1].equals("ds")) {
+                if (strings.length < 2 || !strings[1].equals("ds")) {
                     throw new IOException("Problem specifier is not ds in line " + i);
                 }
                 continue;
