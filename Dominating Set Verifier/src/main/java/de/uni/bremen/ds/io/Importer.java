@@ -29,18 +29,22 @@ public class Importer {
                 if (strings.length < 2 || !strings[1].equals("ds")) {
                     throw new IOException("Problem specifier is not ds in line " + i);
                 }
+                if (strings.length != 4) {
+                    throw new IOException("Problem specifying line " + i + " does not contain exactly 4 values");
+                }
+
+                int n = Integer.parseInt(strings[2]);
+                for(int j = 1; j <= n; j++) {
+                    graph.addVertex(new Vertex(j));
+                }
                 continue;
             }
             if (strings.length == 2) {
                 int start = Integer.parseInt(strings[0]);
                 int end = Integer.parseInt(strings[1]);
 
-                if (!graph.vertexExists(start)) {
-                    graph.addVertex(new Vertex(start));
-                }
-
-                if (!graph.vertexExists(end)) {
-                    graph.addVertex(new Vertex(end));
+                if (!graph.vertexExists(start) || !graph.vertexExists(end)) {
+                    throw new IOException("Line " + i + " contains a vertex greater than n");
                 }
 
                 graph.addEdge(start, end);
